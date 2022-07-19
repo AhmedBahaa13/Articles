@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Articles</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">Title</string>
+    <string name="publisher">Publisher</string>
+    <string name="publishedby">PublishedBy</string>
+    <string name="rating">Rating</string>
+    <string name="summary">Summary</string>
+    <string name="date">Date</string>
+</resources>
