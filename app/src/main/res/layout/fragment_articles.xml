@@ -34,13 +34,15 @@
 
     <TextView
         android:id="@+id/title_vlaue"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
         android:textColor="#837979"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/title_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/title_view"
         app:layout_constraintTop_toTopOf="@id/title_view"
         app:layout_constraintVertical_bias="0.0"
@@ -56,7 +58,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/title_view"
-        app:layout_constraintTop_toBottomOf="@+id/title_view" />
+        app:layout_constraintTop_toBottomOf="@+id/title_vlaue" />
 
     <TextView
         android:id="@+id/published_by_value"
@@ -67,6 +69,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/published_by"
+        app:layout_constraintEnd_toEndOf="@+id/title_vlaue"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/published_by"
         app:layout_constraintTop_toTopOf="@id/published_by"
         app:layout_constraintVertical_bias="0.0"
@@ -82,7 +86,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/published_by"
-        app:layout_constraintTop_toBottomOf="@+id/published_by" />
+        app:layout_constraintTop_toBottomOf="@+id/published_by_value" />
 
     <TextView
         android:id="@+id/rating_value"
@@ -93,6 +97,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/rating_view"
+        app:layout_constraintEnd_toEndOf="@+id/published_by_value"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/rating_view"
         app:layout_constraintTop_toTopOf="@id/rating_view"
         app:layout_constraintVertical_bias="0.0"
@@ -108,7 +114,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/rating_view"
-        app:layout_constraintTop_toBottomOf="@+id/rating_view" />
+        app:layout_constraintTop_toBottomOf="@+id/rating_value" />
 
     <TextView
         android:id="@+id/summary_value"
@@ -119,6 +125,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/summary_view"
+        app:layout_constraintEnd_toEndOf="@+id/rating_value"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/summary_view"
         app:layout_constraintTop_toTopOf="@id/summary_view"
         app:layout_constraintVertical_bias="0.0"
@@ -128,13 +136,13 @@
         android:id="@+id/date_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="@string/date"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/summary_view"
-        app:layout_constraintTop_toBottomOf="@+id/summary_view" />
+        app:layout_constraintTop_toBottomOf="@+id/summary_value" />
 
     <TextView
         android:id="@+id/date_value"
@@ -145,6 +153,8 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/date_view"
+        app:layout_constraintEnd_toEndOf="@+id/summary_value"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/date_view"
         app:layout_constraintTop_toTopOf="@id/date_view"
         app:layout_constraintVertical_bias="0.0"

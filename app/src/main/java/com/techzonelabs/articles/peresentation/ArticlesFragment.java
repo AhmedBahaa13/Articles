@@ -10,20 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.techzonelabs.articles.data.models.Article;
 import com.techzonelabs.articles.databinding.FragmentArticlesBinding;
 
 
 public class ArticlesFragment extends Fragment {
     private FragmentArticlesBinding binding;
+    private Article article;
 
-    public ArticlesFragment() {
-        // Required empty public constructor
-    }
+    public ArticlesFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentArticlesBinding.inflate(inflater);
         return binding.getRoot();
     }
@@ -31,6 +31,12 @@ public class ArticlesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        assert getArguments() != null;
+       article = (Article) getArguments().getSerializable("article");
+       binding.dateValue.setText(article.published_date.substring(0,10));
+       binding.titleVlaue.setText(article.title);
+       binding.publishedByValue.setText(article.byline);
+       binding.summaryValue.setText(article.myAbstract);
+        Glide.with(binding.imageView).load(article.multimedia.get(2).url).into(binding.imageView);
     }
 }
