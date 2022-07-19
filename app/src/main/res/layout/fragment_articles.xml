@@ -104,7 +104,7 @@
         app:layout_constraintStart_toEndOf="@id/rating_view"
         app:layout_constraintTop_toTopOf="@id/rating_view"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="@string/rating" />
+        android:text="@string/there_is_no_data" />
 
     <TextView
         android:id="@+id/summary_view"

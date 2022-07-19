@@ -8,4 +8,6 @@
     <string name="rating">Rating</string>
     <string name="summary">Summary</string>
     <string name="date">Date</string>
+    <string name="there_is_no_data">There is no Data</string>
+    <string name="unknown">UnKnown</string>
 </resources>

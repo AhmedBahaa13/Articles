@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title">Title</string>
-    <string name="publisher">Publisher</string>
-    <string name="publishedby">PublishedBy</string>
-    <string name="rating">Rating</string>
-    <string name="summary">Summary</string>
-    <string name="date">Date</string>
+    <string name="title">عنوان</string>
+    <string name="publisher">الناشر</string>
+    <string name="publishedby">نشرت من قبل</string>
+    <string name="rating">تقييم</string>
+    <string name="summary">ملخص</string>
+    <string name="date">تاريخ</string>
+    <string name="there_is_no_data">ليس هنالك معلومات</string>
+    <string name="unknown">مجهول</string>
 </resources>
