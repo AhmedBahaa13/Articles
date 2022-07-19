@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.techzonelabs.articles.databinding.FragmentArticlesBinding;
 
 
 public class ArticlesFragment extends Fragment {
+    private static final String TAG = "ArticlesFragment";
     private FragmentArticlesBinding binding;
     private Article article;
 
@@ -38,5 +40,6 @@ public class ArticlesFragment extends Fragment {
        binding.publishedByValue.setText(article.byline);
        binding.summaryValue.setText(article.myAbstract);
         Glide.with(binding.imageView).load(article.multimedia.get(2).url).into(binding.imageView);
+        Log.d(TAG, "onViewCreated: Article From Args"+article.toString());
     }
 }
