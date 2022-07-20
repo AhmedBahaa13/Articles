@@ -1,4 +1,4 @@
-package com.techzonelabs.articles.peresentation;
+package com.techzonelabs.articles.peresentation.views;
 
 import android.os.Bundle;
 
@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.techzonelabs.articles.data.models.Article;
 import com.techzonelabs.articles.databinding.FragmentArticlesBinding;
+import com.techzonelabs.articles.utils.Constants;
 
 
 public class ArticlesFragment extends Fragment {
@@ -34,7 +35,7 @@ public class ArticlesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         assert getArguments() != null;
-       article = (Article) getArguments().getSerializable("article");
+       article = (Article) getArguments().getSerializable(Constants.ARTICLE);
        binding.dateValue.setText(article.published_date.substring(0,10));
        binding.titleVlaue.setText(article.title);
        binding.publishedByValue.setText(article.byline);

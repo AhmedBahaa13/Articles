@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.techzonelabs.articles.MyApplication;
 import com.techzonelabs.articles.data.ArticlesApi;
+import com.techzonelabs.articles.data.Resource;
 import com.techzonelabs.articles.data.models.Result;
 
 import javax.inject.Inject;
@@ -26,15 +27,16 @@ public class ArticlesViewModel extends AndroidViewModel {
     @Inject
     ArticlesApi api;
 
-    public MutableLiveData<Result> liveData;
+    public MutableLiveData<Resource> liveData;
 
     public ArticlesViewModel(@NonNull Application application) {
         super(application);
-        liveData = new MutableLiveData();
+        liveData = new MutableLiveData<>();
         ((MyApplication)application).getApiComponent().inject(ArticlesViewModel.this);
     }
 
     public void makeCall() {
+        liveData.postValue(new Resource.Loading());
         Observable<Result> observable = api
                 .getArticles()
                 .subscribeOn(Schedulers.io())
@@ -46,14 +48,14 @@ public class ArticlesViewModel extends AndroidViewModel {
 
             @Override
             public void onNext(Result result) {
-            liveData.postValue(result);
+            liveData.postValue(new Resource.Success<>(result));
                 Log.d(TAG, "onNext: Result" + result.toString());
             }
 
             @Override
             public void onError(Throwable e) {
-            Log.d(TAG, "onError: Call Api Error" + e.getMessage());
-
+                liveData.postValue(new Resource.Error<>(e.getMessage()));
+                Log.d(TAG, "onError: Call Api Error" + e.getMessage());
             }
 
             @Override

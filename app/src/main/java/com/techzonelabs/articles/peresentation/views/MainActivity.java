@@ -1,8 +1,10 @@
-package com.techzonelabs.articles;
+package com.techzonelabs.articles.peresentation.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.techzonelabs.articles.R;
 
 public class MainActivity extends AppCompatActivity {
 
